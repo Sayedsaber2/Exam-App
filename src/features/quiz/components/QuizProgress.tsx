@@ -10,7 +10,8 @@ export default function QuizProgress({ label, current, total }: Props) {
 
     return (
         <div className="min-w-0 flex-1 space-y-2">
-            <div className="flex items-center justify-between gap-4 text-sm">
+            {/* flex-wrap: لو مفيش مكان، "Question 1 of 10" ينزل سطر لوحده */}
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-sm">
                 <p className="truncate text-gray-700">{label}</p>
                 <p className="shrink-0 text-muted-foreground">
                     Question <span className="font-bold text-primary">{current}</span> of {total}

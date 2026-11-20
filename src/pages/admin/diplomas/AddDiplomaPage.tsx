@@ -24,7 +24,7 @@ export default function AddDiplomaPage() {
                 <FormActions formId={FORM_ID} cancelTo="/admin/diplomas" isPending={isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 <DiplomaForm
                     formId={FORM_ID}
                     defaultValues={{ title: "", description: "", image: "" }}

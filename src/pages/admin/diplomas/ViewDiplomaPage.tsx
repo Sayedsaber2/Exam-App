@@ -38,7 +38,7 @@ export default function ViewDiplomaPage() {
                 <h1 className="font-inter text-lg font-semibold  text-foreground">{diploma?.title}</h1>
 
                 {diploma && (
-                    <div className="flex gap-2.5 font-mono">
+                    <div className="flex flex-wrap gap-2.5 font-mono">
                         {/* القفل: يظهر للسوبر أدمن بس */}
                         {isSuperAdmin && (
                             <button
@@ -77,7 +77,7 @@ export default function ViewDiplomaPage() {
                 )}
             </AdminPageHeader>
 
-            <div className="p-6 font-mono">
+            <div className="p-4 sm:p-6 font-mono">
                 {isError && <ErrorAlert message={getErrorMessage(error)} />}
 
                 {diploma ? (

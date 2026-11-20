@@ -39,7 +39,7 @@ export default function ViewExamPage() {
                 <ExamHeading exam={exam} />
 
                 {exam && (
-                    <div className="flex shrink-0 gap-2.5">
+                    <div className="flex flex-wrap gap-2.5">
                         {isSuperAdmin && (
                             <button
                                 type="button"
@@ -77,7 +77,7 @@ export default function ViewExamPage() {
                 )}
             </AdminPageHeader>
 
-            <div className="flex flex-col gap-6 p-6">
+            <div className="flex flex-col gap-6 p-4 sm:p-6">
                 {isError && <ErrorAlert message={getErrorMessage(error)} />}
 
                 {/* كارت البيانات */}

@@ -18,7 +18,7 @@ type Props = {
 // جدول سجل التغييرات: الأكشن، ومين عمله، واتعمل في إيه، وإمتى (فيجما)
 export default function AuditLogsTable({ logs, sort, onSortChange, onDelete }: Props) {
     return (
-        <table className="w-full bg-background text-left text-sm">
+        <table className="w-full min-w-160 bg-background text-left text-sm">
             <thead className="bg-primary text-white">
                 <tr className="h-9">
                     <th className="w-36 px-4 font-medium">Action</th>

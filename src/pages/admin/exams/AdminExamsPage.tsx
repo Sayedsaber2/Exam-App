@@ -87,7 +87,7 @@ export default function AdminExamsPage() {
                 </Link>
             </AdminPageHeader>
 
-            <div className="flex flex-col gap-6 p-6 font-mono">
+            <div className="flex flex-col gap-6 p-4 sm:p-6 font-mono">
                 {/* key: لو الـ URL اتغير من برّه، الكارت يتولد من جديد بالقيم الجديدة */}
                 <SearchFilters
                     key={search + immutable + diplomaId}
@@ -112,7 +112,8 @@ export default function AdminExamsPage() {
                     (data.data.length === 0 ? (
                         <p className="bg-background p-6 text-center text-muted-foreground">No exams found.</p>
                     ) : (
-                        <div className={isFetching ? "opacity-60 transition-opacity" : "transition-opacity"}>
+                        // overflow-x-auto: الجدول بس هو اللي بيتحرك يمين وشمال على الشاشة الصغيرة، مش الصفحة كلها
+                        <div className={isFetching ? "overflow-x-auto opacity-60 transition-opacity" : "overflow-x-auto transition-opacity"}>
                             <ExamsTable
                                 exams={data.data}
                                 sort={{ sortBy, sortOrder }}

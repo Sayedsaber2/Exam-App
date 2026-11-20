@@ -16,7 +16,7 @@ export default function PageHeader({ icon, title, crumbs, backTo }: Props) {
         <div className="space-y-4">
             {/* المسار: Diplomas / Frontend Development / Exams */}
             {crumbs && crumbs.length > 0 && (
-                <nav className="-mx-6 -mt-6 flex items-center gap-2 bg-background px-6 py-4 text-muted-foreground font-mono">
+                <nav className="-mx-4 -mt-4 flex flex-wrap items-center gap-2 bg-background px-4 py-4 text-muted-foreground font-mono sm:-mx-6 sm:-mt-6 sm:px-6">
                     {crumbs.map((crumb, i) => {
                         const isLast = i === crumbs.length - 1;
                         return (
@@ -47,9 +47,11 @@ export default function PageHeader({ icon, title, crumbs, backTo }: Props) {
                 )}
 
                 {/* الشريط الأزرق: 80px ارتفاع · أيقونة + عنوان أبيض */}
-                <div className="flex h-20 flex-1 items-center gap-4 bg-primary px-8 text-primary-foreground [&_svg]:size-8">
+                {/* sm: الموبايل بياخد شريط أصغر وعنوان أصغر، ومن أول sm يرجع زي فيجما */}
+                <div className="flex h-16 min-w-0 flex-1 items-center gap-3 bg-primary px-4 text-primary-foreground sm:h-20 sm:gap-4 sm:px-8 [&_svg]:size-6 sm:[&_svg]:size-8">
                     {icon}
-                    <h1 className="font-inter text-3xl font-semibold">{title}</h1>
+                    {/* truncate: العنوان الطويل سطر واحد وآخره نقط */}
+                    <h1 className="truncate font-inter text-xl font-semibold sm:text-3xl">{title}</h1>
                 </div>
             </div>
         </div>

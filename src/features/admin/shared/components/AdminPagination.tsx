@@ -18,7 +18,7 @@ export default function AdminPagination({ page, limit, total, totalPages, onPage
 
     return (
         <div className="flex items-center gap-4">
-            <p className="text-sm text-gray-800">
+            <p className="text-sm whitespace-nowrap text-gray-800">
                 {from} - {to} of {total}
             </p>
 

@@ -45,7 +45,8 @@ export default function ExamForm({ formId, defaultValues, onSubmit, error }: Pro
         <form id={formId} onSubmit={handleSubmit(submit)} className="bg-background font-mono">
             <div className="flex h-10 items-center bg-primary px-4 font-medium text-white">Exam Information</div>
 
-            <div className="grid grid-cols-2 gap-4 p-4">
+            {/* الموبايل: عمود واحد، ومن أول md عمودين زي فيجما */}
+            <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
                 {/* العمود الشمال */}
                 <div className="flex flex-col gap-6">
                     <Controller

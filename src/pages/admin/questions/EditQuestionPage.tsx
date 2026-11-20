@@ -36,7 +36,7 @@ export default function EditQuestionPage() {
                 <FormActions formId={FORM_ID} cancelTo={viewPath} isPending={update.isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {question.isError && <ErrorAlert message={getErrorMessage(question.error)} />}
 
                 {/* البوابة: الفورم ميتولدش غير والسؤال وصل، عشان يبدأ بإجاباته القديمة */}

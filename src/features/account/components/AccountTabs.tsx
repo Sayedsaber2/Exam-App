@@ -8,7 +8,8 @@ export default function AccountTabs() {
     const { logout } = useLogout();
 
     return (
-        <nav className="flex w-72 shrink-0 flex-col gap-2.5 bg-background p-6 ">
+        // الموبايل: التابات جنب بعض في صف، ومن أول lg عمود عرضه 288px زي فيجما
+        <nav className="flex shrink-0 flex-wrap gap-2.5 bg-background p-3 lg:w-72 lg:flex-col lg:flex-nowrap lg:p-6">
             {/* end = نشط بس لما المسار /account بالظبط — مش وإحنا في /account/change-password */}
             {/* border: false = التاب النشط خلفية بس من غير بوردر (فيجما) — عكس السايدبار */}
             <NavLink to="/account" end className={({ isActive }) => navItemClass({ isActive }, { border: false })}>
@@ -24,7 +25,7 @@ export default function AccountTabs() {
             <button
                 type="button"
                 onClick={logout}
-                className="mt-auto flex cursor-pointer items-center gap-3 bg-red-50 px-4 py-4 text-destructive transition-colors outline-none hover:bg-red-100"
+                className="flex cursor-pointer items-center gap-3 bg-red-50 px-4 py-4 lg:mt-auto text-destructive transition-colors outline-none hover:bg-red-100"
             >
                 {/* -scale-x-100 = السهم يبص شمال زي فيجما */}
                 <LogOut size={20} className="-scale-x-100" />

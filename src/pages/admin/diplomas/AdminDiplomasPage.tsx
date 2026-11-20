@@ -84,7 +84,7 @@ export default function AdminDiplomasPage() {
                 </Link>
             </AdminPageHeader>
 
-            <div className="flex flex-col gap-6 p-6 font-mono">
+            <div className="flex flex-col gap-6 p-4 sm:p-6 font-mono">
                 {/* key = لو الـ URL اتغير من برّه (زرار Back) الكارت يتولد من جديد بالقيم الجديدة */}
                 <SearchFilters
                     key={search + immutable}
@@ -103,7 +103,8 @@ export default function AdminDiplomasPage() {
                         <p className="bg-background p-6 text-center text-muted-foreground">No diplomas found.</p>
                     ) : (
                         // isFetching = بيجيب صفحة جديدة والقديمة لسه ظاهرة → نبهّتها شوية عشان المستخدم يعرف
-                        <div className={isFetching ? "opacity-60 transition-opacity" : "transition-opacity"}>
+                        // overflow-x-auto: الجدول بس هو اللي بيتحرك يمين وشمال على الشاشة الصغيرة، مش الصفحة كلها
+                        <div className={isFetching ? "overflow-x-auto opacity-60 transition-opacity" : "overflow-x-auto transition-opacity"}>
                             <DiplomasTable
                                 diplomas={data.data}
                                 sort={{ sortBy, sortOrder }}

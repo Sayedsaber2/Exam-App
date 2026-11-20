@@ -46,7 +46,7 @@ export default function ConfirmDeleteDialog({ open, onOpenChange, title, onConfi
                     </div>
                 ) : null}
 
-                <DialogFooter className="mt-9 bg-gray-50 px-14">
+                <DialogFooter className="mt-9 bg-gray-50 sm:px-14">
                     <DialogClose render={<Button variant="secondary" className="h-11 flex-1 bg-gray-100 text-gray-800 hover:bg-gray-200" />}>
                         Cancel
                     </DialogClose>

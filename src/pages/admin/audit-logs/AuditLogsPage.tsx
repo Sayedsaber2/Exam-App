@@ -110,7 +110,7 @@ export default function AuditLogsPage() {
                 )}
             </AdminPageHeader>
 
-            <div className="flex flex-col gap-6 p-6">
+            <div className="flex flex-col gap-6 p-4 sm:p-6">
                 {/* key: لو الـ URL اتغير من برّه، الكارت يتولد من جديد بالقيم الجديدة */}
                 <AuditLogFilters
                     key={category + action + actorUserId}
@@ -128,7 +128,8 @@ export default function AuditLogsPage() {
                     (data.data.length === 0 ? (
                         <p className="bg-background p-6 text-center text-muted-foreground">No logs found.</p>
                     ) : (
-                        <div className={isFetching ? "opacity-60 transition-opacity" : "transition-opacity"}>
+                        // overflow-x-auto: الجدول بس هو اللي بيتحرك يمين وشمال على الشاشة الصغيرة، مش الصفحة كلها
+                        <div className={isFetching ? "overflow-x-auto opacity-60 transition-opacity" : "overflow-x-auto transition-opacity"}>
                             <AuditLogsTable
                                 logs={data.data}
                                 sort={{ sortBy, sortOrder }}

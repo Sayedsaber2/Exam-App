@@ -66,14 +66,15 @@ export default function SearchFilters({ initial, onApply, onClear, diplomaOption
                     </div>
 
                     {/* القوايم جنب بعض، كل واحدة 320 بكسل (فيجما) */}
-                    <div className="flex gap-2">
+                    {/* الموبايل: القوايم تحت بعض بعرض الكارت، ومن أول sm جنب بعض */}
+                    <div className="flex flex-col gap-2 sm:flex-row">
                         {diplomaOptions && (
                             <NativeSelect
                                 placeholder="Diploma"
                                 options={diplomaOptions}
                                 value={diplomaId}
                                 onChange={(e) => setDiplomaId(e.target.value)}
-                                className="w-80"
+                                className="w-full sm:w-80"
                             />
                         )}
                         <NativeSelect
@@ -81,7 +82,7 @@ export default function SearchFilters({ initial, onApply, onClear, diplomaOption
                             options={IMMUTABILITY_OPTIONS}
                             value={immutable}
                             onChange={(e) => setImmutable(e.target.value as FiltersValue["immutable"])}
-                            className="w-80"
+                            className="w-full sm:w-80"
                         />
                     </div>
 

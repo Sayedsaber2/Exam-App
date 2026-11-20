@@ -23,7 +23,7 @@ export default function AddExamPage() {
                 <FormActions formId={FORM_ID} cancelTo="/admin/exams" isPending={isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 <ExamForm
                     formId={FORM_ID}
                     defaultValues={{ title: "", diplomaId: "", duration: "", description: "", image: "" }}

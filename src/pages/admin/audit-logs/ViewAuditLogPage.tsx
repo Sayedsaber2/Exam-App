@@ -54,7 +54,7 @@ export default function ViewAuditLogPage() {
                 )}
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {isError && <ErrorAlert message={getErrorMessage(error)} />}
 
                 {log ? (

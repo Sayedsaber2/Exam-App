@@ -16,7 +16,7 @@ type Props = {
 // جدول الامتحانات: نفس جدول الدبلومات، بس فيه عمود الدبلومة وعدد الأسئلة بدل الوصف (فيجما)
 export default function ExamsTable({ exams, sort, onSortChange, onDelete, isSuperAdmin }: Props) {
     return (
-        <table className="w-full bg-background text-left text-sm">
+        <table className="w-full min-w-160 bg-background text-left text-sm">
             <thead className="bg-primary text-white">
                 <tr className="h-9">
                     <th className="w-29 px-4 font-medium">Image</th>

@@ -28,15 +28,15 @@ export default function QuizRunner({ exam, questions, onRestart }: Props) {
     }
 
     return (
-        <div className="bg-background p-6 *:font-mono">
+        <div className="bg-background p-4 sm:p-6 *:font-mono">
             {/* السطر العلوي: التقدم | عصاية | التايمر */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6">
                 <QuizProgress label={label} current={quiz.current + 1} total={quiz.total} />
                 <span className="h-16 w-px bg-gray-200" />
                 <QuizTimer secondsLeft={quiz.secondsLeft} totalSeconds={exam.duration * 60} />
             </div>
 
-            <h2 className="mt-10 text-2xl font-bold text-primary">{quiz.question.text}</h2>
+            <h2 className="mt-8 text-xl font-bold text-primary sm:mt-10 sm:text-2xl">{quiz.question.text}</h2>
 
             {/* radiogroup = للـ screen reader: "دول اختيارات من بينها واحد" */}
             <div role="radiogroup" aria-label="Answers" className="mt-5 flex flex-col gap-3">

@@ -46,7 +46,8 @@ export default function ProfileForm({ user }: { user: User }) {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
             {/* فيجما: 10px بين الاسمين */}
-            <div className="grid grid-cols-2 gap-2.5">
+            {/* الموبايل: الاسم الأول تحت الأخير، ومن أول sm جنب بعض */}
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 <Controller
                     name="firstName"
                     control={control}
@@ -113,7 +114,7 @@ export default function ProfileForm({ user }: { user: User }) {
 
             <ErrorAlert message={getErrorMessage(error)} />
 
-            <div className="mt-5 flex gap-4">
+            <div className="mt-5 flex flex-col gap-4 sm:flex-row">
                 <DeleteAccountDialog />
                 {/* Save مقفول لحد ما المستخدم يغيّر حاجة فعلًا (isDirty) */}
                 <Button type="submit" className="h-11 flex-1" disabled={!isDirty || isPending}>

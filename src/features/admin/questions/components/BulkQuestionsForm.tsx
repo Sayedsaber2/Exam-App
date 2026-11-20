@@ -74,7 +74,8 @@ export default function BulkQuestionsForm({ formId, defaultExamId, onSubmit, err
                 <div className="flex h-10 items-center bg-primary px-4 font-medium text-white">Questions</div>
 
                 {/* التابات */}
-                <div className="flex border-b border-gray-200">
+                {/* overflow-x-auto: لو التابات كتير على الموبايل، الصف يتحرك يمين وشمال */}
+                <div className="flex overflow-x-auto border-b border-gray-200">
                     {fields.map((field, index) => {
                         const isActive = index === active;
                         // hasError: التاب ده فيه غلط، فبنلوّن اسمه أحمر عشان تعرف تروحله
@@ -84,7 +85,7 @@ export default function BulkQuestionsForm({ formId, defaultExamId, onSubmit, err
 
                         return (
                             // key: لازم نستخدم field.id اللي useFieldArray بيعمله، مش رقم التاب
-                            <div key={field.id} className="group relative flex-1">
+                            <div key={field.id} className="group relative min-w-16 flex-1">
                                 <button
                                     type="button"
                                     onClick={() => setActive(index)}
@@ -96,12 +97,13 @@ export default function BulkQuestionsForm({ formId, defaultExamId, onSubmit, err
                                 </button>
 
                                 {/* علامة الحذف بتظهر لما تقف على التاب، ومش بتظهر لو فاضل سؤال واحد */}
+                                {/* الموبايل مفيهوش هوفر، فالعلامة ظاهرة على طول هناك */}
                                 {fields.length > 1 && (
                                     <button
                                         type="button"
                                         aria-label={`Remove question ${index + 1}`}
                                         onClick={() => removeQuestion(index)}
-                                        className="absolute top-1 right-2 hidden cursor-pointer text-destructive group-hover:block"
+                                        className="absolute top-1 right-2 block cursor-pointer text-destructive lg:hidden lg:group-hover:block"
                                     >
                                         <X size={14} />
                                     </button>

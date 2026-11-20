@@ -35,7 +35,7 @@ export default function EditExamPage() {
                 <FormActions formId={FORM_ID} cancelTo={viewPath} isPending={update.isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {exam.isError && <ErrorAlert message={getErrorMessage(exam.error)} />}
 
                 {/* البوابة: الفورم ميتولدش غير والداتا جاهزة، عشان يبدأ بالقيم القديمة */}

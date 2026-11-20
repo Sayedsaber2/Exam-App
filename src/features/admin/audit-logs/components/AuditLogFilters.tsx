@@ -53,7 +53,7 @@ export default function AuditLogFilters({ initial, onApply, onClear, userOptions
             {open && (
                 <div className="flex flex-col gap-3 p-4">
                     {/* flex-1: التلاتة واخدين نفس العرض (فيجما) */}
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2 sm:flex-row">
                         <NativeSelect
                             placeholder="Category"
                             options={CATEGORY_OPTIONS}

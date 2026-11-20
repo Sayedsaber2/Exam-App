@@ -20,15 +20,16 @@ export default function QuizResults({ result, label, onRestart }: Props) {
     const incorrect = submission.totalQuestions - submission.correctAnswers;
 
     return (
-        <div className="bg-background p-6 font-mono">
+        <div className="bg-background p-4 font-mono sm:p-6">
             {/* نفس السطر العلوي بس الشريط كامل */}
             <QuizProgress label={label} current={submission.totalQuestions} total={submission.totalQuestions} />
 
             <h2 className="mt-12 text-2xl font-bold text-primary">Results:</h2>
 
-            <div className="mt-4 flex gap-5">
+            {/* الموبايل: الدايرة فوق والأسئلة تحتها، ومن أول md جنب بعض */}
+            <div className="mt-4 flex flex-col gap-5 md:flex-row">
                 {/* الكارت الشمال: الدونات + المفتاح */}
-                <div className="flex w-68 shrink-0 flex-col items-center justify-center border border-blue-100 bg-blue-50 p-6">
+                <div className="flex w-full shrink-0 flex-col items-center justify-center border border-blue-100 bg-blue-50 p-6 md:w-68">
                     <ResultDonut correct={submission.correctAnswers} total={submission.totalQuestions} />
                     <div className="mt-10 flex flex-col gap-3 text-sm font-medium text-foreground">
                         <p className="flex items-center gap-2.5">
@@ -43,7 +44,7 @@ export default function QuizResults({ result, label, onRestart }: Props) {
                 </div>
 
                 {/* القايمة اليمين: بتسكرول لوحدها والكارت ثابت — زي فيجما */}
-                <div className="flex max-h-150 min-w-0 flex-1 flex-col gap-6 overflow-y-auto border-l border-dashed border-primary pl-3">
+                <div className="flex max-h-150 min-w-0 flex-1 flex-col gap-6 overflow-y-auto border-t border-dashed border-primary pt-4 md:border-t-0 md:border-l md:pt-0 md:pl-3">
                     {analytics.map((analytic) => (
                         <ResultQuestion key={analytic.questionId} analytic={analytic} />
                     ))}

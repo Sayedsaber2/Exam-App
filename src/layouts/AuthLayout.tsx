@@ -7,7 +7,8 @@ export default function AuthLayout() {
       <div className=" min-h-screen grid lg:grid-cols-2">
 
         <AuthHero />
-        <div className="flex items-center justify-center">
+        {/* px-6 py-10: مسافة حوالين الفورم عشان ميلزقش في حرف شاشة الموبايل */}
+        <div className="flex items-center justify-center px-6 py-10">
           <Outlet />
         </div>
       </div>

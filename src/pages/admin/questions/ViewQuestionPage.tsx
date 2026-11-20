@@ -46,7 +46,7 @@ export default function ViewQuestionPage() {
                 <QuestionHeading question={question} />
 
                 {question && (
-                    <div className="flex shrink-0 gap-2.5">
+                    <div className="flex flex-wrap gap-2.5">
                         {isSuperAdmin && (
                             <button
                                 type="button"
@@ -84,7 +84,7 @@ export default function ViewQuestionPage() {
                 )}
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {isError && <ErrorAlert message={getErrorMessage(error)} />}
 
                 {question ? (

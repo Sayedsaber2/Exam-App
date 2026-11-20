@@ -54,7 +54,7 @@ export default function AddQuestionPage() {
                 <FormActions formId={formId} cancelTo={cancelTo} isPending={createOne.isPending || createMany.isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {bulk ? (
                     <BulkQuestionsForm formId={formId} defaultExamId={examId} onSubmit={handleBulk} error={createMany.error} />
                 ) : (

@@ -36,7 +36,7 @@ export default function EditDiplomaPage() {
                 <FormActions formId={FORM_ID} cancelTo={viewPath} isPending={update.isPending} />
             </AdminPageHeader>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {diploma.isError && <ErrorAlert message={getErrorMessage(diploma.error)} />}
 
                 {/* البوابة: الفورم ميتولدش غير والداتا جاهزة، عشان يبدأ بالقيم القديمة */}

@@ -11,15 +11,16 @@ export default function AccountLayout() {
     const crumbs = isChangePassword? [{ label: "Account", to: "/account" }, { label: "Change Password" }]: [{ label: "Account" }];
 
     return (
-        // min-h = ارتفاع الشاشة ناقص بادينج main (p-6 فوق وتحت = 3rem) → العمودين يملوا الصفحة زي فيجما
-        <div className="flex min-h-[calc(100vh-3rem)] flex-col gap-6 font-mono">
+        // lg:min-h = على الكمبيوتر بس: ارتفاع الشاشة ناقص بادينج main (3rem) → العمودين يملوا الصفحة زي فيجما
+        <div className="flex flex-col gap-6 font-mono lg:min-h-[calc(100vh-3rem)]">
             <PageHeader icon={<User />} title="Account Settings" crumbs={crumbs} backTo="/" />
         
             {/* عمودين بنفس الارتفاع: التابات شمال · محتوى التاب يمين · flex-1 = خد باقي الارتفاع */}
-            <div className="flex flex-1 items-stretch gap-4">
+            {/* الموبايل: التابات فوق والفورم تحتها، ومن أول lg جنب بعض */}
+            <div className="flex flex-1 flex-col gap-4 lg:flex-row lg:items-stretch">
                 <AccountTabs />
                 
-                <section className="min-w-0 flex-1 bg-background p-8 ">
+                <section className="min-w-0 flex-1 bg-background p-4 sm:p-8">
                     <Outlet />
                 </section>
             </div>

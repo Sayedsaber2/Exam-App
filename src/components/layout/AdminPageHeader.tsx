@@ -13,7 +13,7 @@ export default function AdminPageHeader({ crumbs, children }: Props) {
     return (
         <div className="bg-background font-mono">
             {/* الشريط الأول: المسار */}
-            <nav className="flex items-center gap-2 border-b border-gray-200 px-4 py-4 text-sm text-gray-400">
+            <nav className="flex flex-wrap items-center gap-2 border-b border-gray-200 px-4 py-4 text-sm text-gray-400">
                 {crumbs.map((crumb, i) => {
                     const isLast = i === crumbs.length - 1;
                     return (
@@ -34,7 +34,8 @@ export default function AdminPageHeader({ crumbs, children }: Props) {
             </nav>
 
             {/* الشريط التاني (72px): بيظهر بس لو الصفحة بعتتله محتوى */}
-            {children && <div className="flex h-18 items-center justify-between px-6">{children}</div>}
+            {/* flex-wrap: لو المحتوى مش واخد في سطر واحد على الموبايل، الباقي ينزل سطر جديد */}
+            {children && <div className="flex min-h-18 flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">{children}</div>}
         </div>
     );
 }

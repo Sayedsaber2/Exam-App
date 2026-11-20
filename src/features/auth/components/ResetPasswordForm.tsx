@@ -80,7 +80,7 @@ export default function ResetPasswordForm({ token }: { token: string }) {
             </form>
             <p className="text-center font-medium text-sm text-muted-foreground">
                 Don&apos;t have an account?{" "}
-                <Link to="/register" className="text-primary hover:underline">
+                <Link to="/register" className="text-primary underline underline-offset-2">
                     Create yours
                 </Link>
             </p>

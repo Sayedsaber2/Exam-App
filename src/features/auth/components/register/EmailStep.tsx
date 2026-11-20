@@ -72,7 +72,7 @@ export default function EmailStep({ onNext }: { onNext: (values: EmailStepValues
 
             <p className="text-center text-sm text-muted-foreground">
                 Already have an account?{" "}
-                <Link to="/login" className="text-primary hover:underline">
+                <Link to="/login" className="text-primary underline underline-offset-2">
                     Login
                 </Link>
             </p>

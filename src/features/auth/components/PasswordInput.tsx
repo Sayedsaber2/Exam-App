@@ -12,12 +12,13 @@ export default function PasswordInput({ className, ...props }: Props) {
     return (
         <div className="relative">
             {/* pr-10 عشان الكتابة متدخلش تحت أيقونة العين */}
+            {/* p-1 على زرار العين: بيكبّر مساحة اللمس لـ 26 بكسل، فالصباع يعرف يدوس عليه على الموبايل */}
             <Input {...props} type={show ? "text" : "password"} className={cn("pr-10", className)} />
             <button
                 type="button"
                 onClick={() => setShow((s) => !s)}
                 aria-label={show ? "Hide password" : "Show password"}
-                className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-gray-400 transition-colors hover:text-gray-600"
+                className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer p-1 text-gray-400 transition-colors hover:text-gray-600"
             >
                 {show ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>

@@ -8,9 +8,10 @@ export default function AuthLayout() {
 
         <AuthHero />
         {/* px-6 py-10: مسافة حوالين الفورم عشان ميلزقش في حرف شاشة الموبايل */}
-        <div className="flex items-center justify-center px-6 py-10">
+        {/* main: بيقول لقارئ الشاشة إن الفورم ده هو المحتوى الأساسي للصفحة */}
+        <main className="flex items-center justify-center px-6 py-10">
           <Outlet />
-        </div>
+        </main>
       </div>
     </>
   );

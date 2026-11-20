@@ -83,7 +83,7 @@ export default function LoginForm() {
 
             <p className="text-center text-sm text-muted-foreground">
                 Don't have an account?{" "}
-                <Link to="/register" className="text-primary hover:underline">
+                <Link to="/register" className="text-primary underline underline-offset-2">
                     Create yours
                 </Link>
             </p>

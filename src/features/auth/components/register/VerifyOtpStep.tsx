@@ -43,7 +43,7 @@ export default function VerifyOtpStep({ email, onNext,onBack }: Props) {
                     Please enter the 6-digit code we have sent to
                     <br />
                     <span className="text-foreground font-medium">{email}</span>{" "}
-                    <button type="button" onClick={onBack} className="text-primary hover:underline cursor-pointer">
+                    <button type="button" onClick={onBack} className="text-primary underline underline-offset-2 cursor-pointer">
                         Edit
                     </button>
                 </p>
@@ -88,7 +88,7 @@ export default function VerifyOtpStep({ email, onNext,onBack }: Props) {
                                 type="button"
                                 disabled={resend.isPending}
                                 onClick={() => resend.mutate({ email }, { onSuccess: restart })}
-                                className="cursor-pointer text-primary hover:underline disabled:opacity-50"
+                                className="cursor-pointer text-primary underline underline-offset-2 disabled:opacity-50"
                             >
                                 {resend.isPending ? "Sending..." : "Resend code"}
                             </button>
